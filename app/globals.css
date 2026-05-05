@@ -1,0 +1,328 @@
+@import "tailwindcss";
+
+/* Agency Color Palette */
+:root {
+  /* Primary Colors */
+  --primary-dark: #17012C;
+  --primary-light: #5B3AEE;
+  --accent: #F39F5F;
+  --accent-hover: #E8893E;
+  --blue: #219BE4;
+  
+  /* Background Colors */
+  --bg-light: #EAF3F8;
+  --bg-lighter: #ECF8FF;
+  --bg-white: #FFFFFF;
+  
+  /* Text Colors */
+  --text-dark: #333333;
+  --text-muted: #666666;
+  --text-light: #FFFFFF;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #17012C 0%, #2A0A4A 50%, #5B3AEE 100%);
+  --gradient-accent: linear-gradient(135deg, #F39F5F 0%, #E8893E 100%);
+  --gradient-blue: linear-gradient(135deg, #219BE4 0%, #5B3AEE 100%);
+  
+  /* Default Background & Foreground */
+  --background: #FFFFFF;
+  --foreground: #333333;
+  color-scheme: light;
+}
+
+/* Dark Variant for specific sections if needed */
+.dark-theme {
+  --background: #17012C;
+  --foreground: #FFFFFF;
+  color-scheme: dark;
+}
+
+/* Base Body Styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Figtree', 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography */
+.font-figtree {
+  font-family: 'Figtree', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Utility Classes */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-start {
+  display: flex;  
+  justify-content: start;
+  align-items: center;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Button Styles */
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--gradient-accent);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(243, 159, 95, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+}
+
+.btn-secondary:hover {
+  background: var(--blue);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
+}
+
+/* Navbar Specific Styles */
+.navbar {
+  background: #E9EAEF;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-scrolled {
+  background: #E9EAEF/95;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Styles */
+.dropdown-item {
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(23, 1, 44, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Section Backgrounds */
+.section-light {
+  background: var(--bg-light);
+}
+
+.section-white {
+  background: var(--bg-white);
+}
+
+.section-gradient {
+  background: var(--gradient-primary);
+}
+
+/* Text Gradients */
+.text-gradient-accent {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-blue {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animation Classes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Selection Color */
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* Responsive Container */
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container-custom {
+    padding: 0 1rem;
+  }
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--bg-light);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Form Styles */
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: white;
+  color: var(--text-dark);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(33, 155, 228, 0.1);
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-accent {
+  background: rgba(243, 159, 95, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(243, 159, 95, 0.3);
+}
+
+.badge-blue {
+  background: rgba(33, 155, 228, 0.1);
+  color: var(--blue);
+  border: 1px solid rgba(33, 155, 228, 0.3);
+}
+
+.badge-purple {
+  background: rgba(91, 58, 238, 0.1);
+  color: var(--primary-light);
+  border: 1px solid rgba(91, 58, 238, 0.3);
+}
